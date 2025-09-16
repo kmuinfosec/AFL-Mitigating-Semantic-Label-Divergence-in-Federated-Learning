@@ -1,7 +1,7 @@
 seed: 42
 
 path:
-  train_csv: ../dataset/Web-PAT.parquet
+  data_path: ../dataset/Web-PAT.parquet
   artifacts: artifacts
 
 split:
