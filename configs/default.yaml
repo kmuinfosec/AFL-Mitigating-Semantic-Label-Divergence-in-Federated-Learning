@@ -1,0 +1,26 @@
+seed: 42
+
+path:
+  train_csv: ../dataset/Web-PAT.parquet
+  artifacts: artifacts
+
+split:
+  test_ratio: 0.2
+
+encode:
+  vec_size: 768
+  win_size: 4
+  kfh_key_hex: ""
+
+cluster:
+  cosine_th: 0.8
+
+model:
+  hidden: [512, 256, 128]
+  lr: 0.001
+  batch_size: 2048
+  local_epoch: 5
+
+fl:
+  n_clients: auto
+  rounds: 100
