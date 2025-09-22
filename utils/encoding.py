@@ -47,3 +47,6 @@ def contents2count(hex_list, vec_size, win_size, key=None):
             v[idx] += 1.0
         V.append(v)
     return np.vstack(V) if V else np.zeros((0, vec_size), dtype=np.float64)
+
+def key_from_hex(s):
+    return bytes.fromhex(s) if s else None

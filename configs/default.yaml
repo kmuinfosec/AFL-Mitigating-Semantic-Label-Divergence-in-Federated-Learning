@@ -1,26 +1,29 @@
+# ==== Data ====
+data_path: ../dataset/Web-PAT.parquet
+vec_size: 768                   
+win_size: 64                     
+key_hex: ""                      
+
+# ==== Model ====
+hidden: [512, 256, 128]          
+batch: 1024
+lr: 0.001                        
+local_epochs: 1                   
+rounds: 10                        
+weight_decay: 0.0                 
+
+# ==== Validation / Early Stopping ====
+threshold: 0.5                    
+val_ratio: 0.2  
+test_ratio: 0.2                   
+patience: 5                        
+
+# ==== Misc ====
 seed: 42
+cpu: false                         
+out_dir: outputs                    
 
-path:
-  data_path: ../dataset/Web-PAT.parquet
-  artifacts: artifacts
-
-split:
-  test_ratio: 0.2
-
-encode:
-  vec_size: 768
-  win_size: 4
-  kfh_key_hex: ""
-
-cluster:
-  cosine_th: 0.8
-
-model:
-  hidden: [512, 256, 128]
-  lr: 0.001
-  batch_size: 2048
-  local_epoch: 5
-
-fl:
-  n_clients: auto
-  rounds: 100
+# AFL(Adaptive Federated Learning) 설정
+afl_theta: 0.95
+afl_min_size: 0
+afl_min_purity: 0.80
